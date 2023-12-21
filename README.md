@@ -10,7 +10,7 @@
 * I decided to log any invalid dates (i.e. Feb 31st) to the console as a warning to the user in case they wanted to investigate.
 * I decided to do a CLI application, but based on a class/struct that is doing conversion.  This class/struct could easily be included in an API end point or any other application, if needed.
 * I decided to support converting a string and converting file to add flexibility to the application.
-* I made strict assumptions for one and two digit months.
+* I made assumptions for one and two digit day/month formats.  I made m2/d2 (See "Date Formats" below) REQUIRE 2 digits to match, where m1/d1 will work with either.  i.e. m1/d1 will match: 1, 01, 11
 
 **Installing Go**
 * If you need to install go, you can install it from here: https://go.dev/doc/install

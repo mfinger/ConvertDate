@@ -78,7 +78,7 @@ func TestDateConverter_ConvertString(t *testing.T) {
 			InputFormat:  "m1/d1/y4",
 			InputString:  "09/01/2023",
 			OutputFormat: "d1:d2:m1:m2:ml:ms:or:y2:y4:",
-			Expected:     "09/01/2023",
+			Expected:     "1:01:9:09:September:Sep:st:23:2023:",
 		},
 	}
 
