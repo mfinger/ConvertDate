@@ -30,7 +30,7 @@ var FormatMap = map[string]FormatConversion{
 		Description:       "Short month name (i.e Jan)",
 	},
 	"m1": {
-		RegularExpression: `([123]\d{1}|[1-9])`,
+		RegularExpression: `(\d{2}|[1-9])`,
 		FormatString:      "1",
 		Description:       "Non zero padded month number (i.e. 1)",
 	},
@@ -40,7 +40,7 @@ var FormatMap = map[string]FormatConversion{
 		Description:       "Zero padded month number (i.e. 01)",
 	},
 	"d1": {
-		RegularExpression: `([123]\d{1}|[1-9])`,
+		RegularExpression: `(\d{2}|[1-9])`,
 		FormatString:      "2",
 		Description:       "Non zero padded month number (i.e. 2)",
 	},
