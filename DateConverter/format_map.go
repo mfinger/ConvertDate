@@ -53,7 +53,13 @@ var FormatMap = map[string]FormatConversion{
 		RegularExpression: `(st|nd|rd|th)`,
 		FormatString:      "",
 		CustomConverter:   ordinalConverter,
-		Description:       "Ordinal string (i.e. st, nd, rd, th)",
+		Description:       "Required ordinal string (i.e. st, nd, rd, th)",
+	},
+	"oo": {
+		RegularExpression: `(st|nd|rd|th)?`,
+		FormatString:      "",
+		CustomConverter:   ordinalConverter,
+		Description:       "Optional rdinal string (i.e. st, nd, rd, th)",
 	},
 	"y4": {
 		RegularExpression: `(\d{4})`,

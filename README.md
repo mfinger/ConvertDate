@@ -5,8 +5,6 @@
 * Since ordinals don't affect the values parsed out for the date, I chose not to validate ordinals against the preceding number.  I.e. 1nd and 4rd will be 1 and 4 respectively and not produce an error or warning.
   * I originally had support in the regex for validating them, but Go's regex does not support positive/negative look behinds
     * For those curious, here is the regex I was going to use: `((?<=1)st|(?<=2)nd|(?<=3)rd|(?<=[0456789])th)`
-* I also made the decision to make ordinals required if they are specified in the input format.  I.e. if you use `d1or` then it will match `22nd` but not `22`.
-  * I could relax this in the regular expression or I could add a new format specifier of `oo` to allow for option ordinals.
 * I made the assumption that the formats could vary wildly where the values for dates aren't necessarily all together, for example
     * `On this 27th day of May in the year of 2023` can be a valid date (see Date Formats, below)
 * I decided to log any invalid dates (i.e. Feb 31st) to the console as a warning to the user in case they wanted to investigate.
@@ -37,7 +35,8 @@
   * `m2` - Zero padded month number (i.e. 01)
   * `ml` - Short month name (i.e Jan)
   * `ms` - Long month name (i.e January)
-  * `or` - Ordinal string (i.e. st, nd, rd, th)
+  * `or` - Required ordinal string (i.e. st, nd, rd, th)
+  * `oo` - Optional ordinal string (i.e. st, nd, rd, th)
   * `y2` - Year number without century (i.e. 06)
   * `y4` - Year number including century (i.e. 2006)
 * Examples:

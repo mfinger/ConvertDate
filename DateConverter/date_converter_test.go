@@ -104,6 +104,34 @@ func TestDateConverter_ConvertString(t *testing.T) {
 			OutputFormat: "d1:d2:m1:m2:ml:ms:or:y2:y4:",
 			Expected:     "1:01:9:09:September:Sep:st:23:2023:",
 		},
+		{
+			Name:         "Required ordinal with ordinal",
+			InputFormat:  "y4 m2 d1or",
+			InputString:  "2023 09 1st",
+			OutputFormat: "d1:d2:m1:m2:ml:ms:or:y2:y4:",
+			Expected:     "1:01:9:09:September:Sep:st:23:2023:",
+		},
+		{
+			Name:         "Required ordinal without ordinal",
+			InputFormat:  "y4 m2 d1or",
+			InputString:  "2023 09 1",
+			OutputFormat: "d1:d2:m1:m2:ml:ms:or:y2:y4:",
+			Expected:     "2023 09 1",
+		},
+		{
+			Name:         "Optional ordinal with ordinal",
+			InputFormat:  "y4 m2 d1oo",
+			InputString:  "2023 09 1st",
+			OutputFormat: "d1:d2:m1:m2:ml:ms:or:y2:y4:",
+			Expected:     "1:01:9:09:September:Sep:st:23:2023:",
+		},
+		{
+			Name:         "Optional ordinal without ordinal",
+			InputFormat:  "y4 m2 d1oo",
+			InputString:  "2023 09 1",
+			OutputFormat: "d1:d2:m1:m2:ml:ms:or:y2:y4:",
+			Expected:     "1:01:9:09:September:Sep:st:23:2023:",
+		},
 	}
 
 	dc, _ := NewDateConverter("", "")
