@@ -69,27 +69,27 @@ func TestDateConverter_ConvertString(t *testing.T) {
 	}
 
 	tests := []TestCase{
-		//{
-		//	Name:         "Single convert",
-		//	InputFormat:  "m2/d2/y4",
-		//	InputString:  "Today is 12/21/2023",
-		//	OutputFormat: "y4-m2-d2",
-		//	Expected:     "Today is 2023-12-21",
-		//},
-		//{
-		//	Name:         "Conplex convert",
-		//	InputFormat:  "d2or day of ml in the year y4",
-		//	InputString:  "Today is the 21st day of December in the year 2023",
-		//	OutputFormat: "y4-m2-d2",
-		//	Expected:     "Today is the 2023-12-21",
-		//},
-		//{
-		//	Name:         "All output formats",
-		//	InputFormat:  "m2/d2/y4",
-		//	InputString:  "09/01/2023",
-		//	OutputFormat: "d1:d2:m1:m2:ml:ms:or:y2:y4:",
-		//	Expected:     "1:01:9:09:September:Sep:st:23:2023:",
-		//},
+		{
+			Name:         "Single convert",
+			InputFormat:  "m2/d2/y4",
+			InputString:  "Today is 12/21/2023",
+			OutputFormat: "y4-m2-d2",
+			Expected:     "Today is 2023-12-21",
+		},
+		{
+			Name:         "Conplex convert",
+			InputFormat:  "d2or day of ml in the year y4",
+			InputString:  "Today is the 21st day of December in the year 2023",
+			OutputFormat: "y4-m2-d2",
+			Expected:     "Today is the 2023-12-21",
+		},
+		{
+			Name:         "All output formats",
+			InputFormat:  "m2/d2/y4",
+			InputString:  "09/01/2023",
+			OutputFormat: "d1:d2:m1:m2:ml:ms:or:y2:y4:",
+			Expected:     "1:01:9:09:September:Sep:st:23:2023:",
+		},
 		{
 			Name:         "Single digits on double digits",
 			InputFormat:  "m2/d2/y4",
@@ -97,13 +97,13 @@ func TestDateConverter_ConvertString(t *testing.T) {
 			OutputFormat: "d1:d2:m1:m2:ml:ms:or:y2:y4:",
 			Expected:     "9/01/2023",
 		},
-		//{
-		//	Name:         "Double digits on single digits",
-		//	InputFormat:  "m1/d1/y4",
-		//	InputString:  "09/01/2023",
-		//	OutputFormat: "d1:d2:m1:m2:ml:ms:or:y2:y4:",
-		//	Expected:     "1:01:9:09:September:Sep:st:23:2023:",
-		//},
+		{
+			Name:         "Double digits on single digits",
+			InputFormat:  "m1/d1/y4",
+			InputString:  "09/01/2023",
+			OutputFormat: "d1:d2:m1:m2:ml:ms:or:y2:y4:",
+			Expected:     "1:01:9:09:September:Sep:st:23:2023:",
+		},
 	}
 
 	dc, _ := NewDateConverter("", "")
