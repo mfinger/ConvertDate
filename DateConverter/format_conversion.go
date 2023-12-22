@@ -23,3 +23,10 @@ func (fc FormatConversion) Convert(t time.Time) string {
 		return fc.CustomConverter(t)
 	}
 }
+
+// NewConstantConverterFunc Create a new converter function to just return a constant buffer. Used during output format generation
+func NewConstantConverterFunc(s string) func(t time.Time) string {
+	return func(t time.Time) string {
+		return s
+	}
+}

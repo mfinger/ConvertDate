@@ -42,3 +42,10 @@ func TestFormatConversion_Convert_With_Custom(t *testing.T) {
 	assert.Equal(t, "-2023-", result, "Conversion should produce -2023-")
 
 }
+
+func TestNewConstantConverterFunc(t *testing.T) {
+	fn := NewConstantConverterFunc("test")
+	dt := time.Date(2023, 12, 17, 11, 0, 0, 0, time.UTC)
+
+	assert.Equal(t, "test", fn(dt))
+}
