@@ -117,6 +117,5 @@ func TestDateConverter_ConvertString(t *testing.T) {
 		assert.Equal(t, test.Expected, result, "TestCase '%s' failed.")
 
 	}
-	//input := "Today is 12/21/2023, tomorrow is December 22nd, 2023, yesterday was the 19th of December, and 2023-02-31 is not a valid date"
 
 }
